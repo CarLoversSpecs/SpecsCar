@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <title>Coche del Día</title>
+  <style>
+    body {
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      background-color: white;
+      color: black;
+      max-width: 900px;
+      margin: 2rem auto;
+      padding: 0 1rem;
+      text-align: center;
+    }
+
+    h1 {
+      color: red;
+      margin-bottom: 2rem;
+    }
+
+    .car-container {
+      display: flex;
+      gap: 2rem;
+      align-items: center;
+      justify-content: center;
+      background-color: #ddd;
+      border-radius: 15px;
+      padding: 2rem;
+      max-width: 800px;
+      margin: 0 auto;
+    }
+
+    .car-photo {
+      width: 350px;
+      height: 230px;
+      object-fit: cover;
+      border-radius: 15px;
+      border: 3px solid #333;
+    }
+
+    .car-info {
+      max-width: 400px;
+      text-align: left;
+    }
+
+    .car-info h2 {
+      margin: 0 0 0.5rem 0;
+      font-size: 2rem;
+      color: red;
+    }
+
+    .car-info p {
+      font-size: 1.1rem;
+      line-height: 1.5;
+      color: #222;
+    }
+
+    button#refresh {
+      margin-top: 2rem;
+      background-color: red;
+      color: white;
+      border: none;
+      padding: 10px 25px;
+      font-size: 1.1rem;
+      border-radius: 20px;
+      cursor: pointer;
+      transition: background-color 0.3s ease;
+    }
+
+    button#refresh:hover {
+      background-color: white;
+      color: red;
+      border: 2px solid red;
+    }
+  </style>
+</head>
+<body>
+
+  <h1>Coche del Día</h1>
+
+  <div class="car-container">
+    <img id="carPhoto" src="" alt="Foto del coche del día" class="car-photo" />
+    <div class="car-info">
+      <h2 id="carTitle">Título del coche</h2>
+      <p id="carDesc">Descripción del coche del día aparecerá aquí.</p>
+    </div>
+  </div>
+
+  <button id="refresh">Mostrar otro coche</button>
+
+  <script>
+    const coches = [
+      {
+        titulo: "Chevrolet Camaro",
+        descripcion: "El Chevrolet Camaro es un icónico muscle car americano, conocido por su potente motor V8 y su diseño agresivo y deportivo.",
+        imagen: "../articles/camaro.jpg"
+      },
+      {
+        titulo: "Chevrolet Corvette",
+        descripcion: "El Chevrolet Corvette es un deportivo legendario, con un rendimiento y diseño que marcan la pauta en el mundo automotriz.",
+        imagen: "../articles/corvette.jpg"
+      },
+      {
+        titulo: "Chevrolet Impala",
+        descripcion: "El Chevrolet Impala es un clásico americano, conocido por su confort y estilo elegante en el mundo de los sedanes.",
+        imagen: "../articles/impala.jpg"
+      }
+      // Añade más coches aquí si quieres
+    ];
+
+    function mostrarCocheAleatorio() {
+      const indice = Math.floor(Math.random() * coches.length);
+      const coche = coches[indice];
+      document.getElementById("carTitle").textContent = coche.titulo;
+      document.getElementById("carDesc").textContent = coche.descripcion;
+      document.getElementById("carPhoto").src = coche.imagen;
+      document.getElementById("carPhoto").alt = `Foto de ${coche.titulo}`;
+    }
+
+    document.getElementById("refresh").addEventListener("click", mostrarCocheAleatorio);
+
+    window.onload = mostrarCocheAleatorio;
+  </script>
+
+</body>
+</html>
