@@ -16,22 +16,42 @@
       background-color: black;
       display: flex;
       justify-content: center;
-      gap: 2rem;
-      padding: 2rem;
+      gap: 1.5rem;
+      padding: 1.5rem;
     }
 
     header a {
-      padding: 15px 30px;
-      border-radius: 30px;
+      padding: 8px 18px;
+      border-radius: 20px;
       text-decoration: none;
       font-weight: bold;
-      font-size: 1.5rem;
+      font-size: 1rem;
       color: white;
+      transition: all 0.3s ease;
+      border: 2px solid transparent;
     }
 
-    .btn-dia { background-color: red; }
-    .btn-marcas { background-color: gray; }
-    .btn-publi { background-color: red; }
+    /* Botones originales */
+    .btn-dia, .btn-publi {
+      background-color: red;
+    }
+
+    .btn-marcas {
+      background-color: gray;
+    }
+
+    /* Hover invertido */
+    .btn-dia:hover, .btn-publi:hover {
+      background-color: white;
+      color: red;
+      border: 2px solid red;
+    }
+
+    .btn-marcas:hover {
+      background-color: white;
+      color: gray;
+      border: 2px solid gray;
+    }
 
     .main-box {
       background-color: #ccc;
@@ -127,4 +147,3 @@
 
 </body>
 </html>
-
