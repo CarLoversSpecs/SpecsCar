@@ -1,0 +1,209 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Artículo: Coche del Día</title>
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      background-color: white;
+      color: black;
+    }
+
+    header {
+      background-color: black;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 1rem 2rem;
+    }
+
+    .nav-buttons {
+      display: flex;
+      gap: 1rem;
+    }
+
+    header a {
+      text-decoration: none;
+      padding: 8px 16px;
+      font-weight: bold;
+      border-radius: 20px;
+      font-size: 1rem;
+      color: white;
+      border: 2px solid transparent;
+      transition: all 0.3s ease;
+    }
+
+    .btn-dia, .btn-publi {
+      background-color: red;
+    }
+
+    .btn-marcas {
+      background-color: gray;
+      color: white;
+    }
+
+    /* Hover invertido */
+    .btn-dia:hover, .btn-publi:hover {
+      background-color: white;
+      color: red;
+      border: 2px solid red;
+    }
+
+    .btn-marcas:hover {
+      background-color: white;
+      color: gray;
+      border: 2px solid gray;
+    }
+
+    /* Buscador */
+    .search-container {
+      display: flex;
+      align-items: center;
+      background-color: white;
+      border-radius: 20px;
+      padding: 5px 10px;
+      border: 2px solid red;
+    }
+
+    .search-container input {
+      border: none;
+      outline: none;
+      font-size: 1rem;
+      padding: 6px 10px;
+      border-radius: 20px;
+      width: 180px;
+      color: black;
+    }
+
+    .search-container button {
+      background-color: red;
+      border: none;
+      color: white;
+      font-size: 1.3rem;
+      padding: 6px 12px;
+      border-radius: 50%;
+      cursor: pointer;
+      margin-left: 8px;
+      line-height: 1;
+      transition: background-color 0.3s ease;
+    }
+
+    .search-container button:hover {
+      background-color: #a30000;
+    }
+
+    main {
+      max-width: 900px;
+      margin: 3rem auto;
+      padding: 0 1rem;
+    }
+
+    .welcome-box {
+      background-color: #ccc;
+      border-radius: 25px;
+      padding: 3rem 2rem;
+      text-align: center;
+      margin-bottom: 3rem;
+    }
+
+    .welcome-box h1 {
+      font-size: 3.5rem;
+      margin: 0;
+      color: black;
+    }
+
+    .welcome-box h2 {
+      font-size: 2rem;
+      margin: 0.5rem 0 0;
+      color: #222;
+      font-weight: 500;
+    }
+
+    article {
+      display: flex;
+      gap: 2rem;
+      flex-wrap: wrap;
+      align-items: flex-start;
+    }
+
+    .article-image {
+      flex: 1 1 400px;
+      border: 4px solid black;
+      border-radius: 15px;
+      overflow: hidden;
+    }
+
+    .article-image img {
+      width: 100%;
+      height: auto;
+      display: block;
+    }
+
+    .article-content {
+      flex: 1 1 400px;
+      color: black;
+    }
+
+    .article-content h3 {
+      font-size: 2.5rem;
+      margin-top: 0;
+      margin-bottom: 0.7rem;
+      color: red;
+    }
+
+    .article-content p {
+      font-size: 1.3rem;
+      line-height: 1.6;
+    }
+
+    @media (max-width: 700px) {
+      article {
+        flex-direction: column;
+      }
+
+      .article-image, .article-content {
+        flex: 1 1 100%;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <header>
+    <nav class="nav-buttons">
+      <a href="#coche-del-dia" class="btn-dia">Coche del día</a>
+      <a href="marcas.html" class="btn-marcas">Marcas</a>
+      <a href="publicidad.html" class="btn-publi">Publicidad</a>
+    </nav>
+    <form class="search-container" onsubmit="event.preventDefault(); alert('Buscar: ' + this.query.value);">
+      <input type="text" name="query" placeholder="Buscar artículo..." />
+      <button type="submit" aria-label="Buscar">&#128269;</button>
+    </form>
+  </header>
+
+  <main>
+    <div class="welcome-box">
+      <h1>Bienvenido</h1>
+      <h2>Amante de los coches</h2>
+    </div>
+
+    <article id="coche-del-dia">
+      <div class="article-image">
+        <img src="camaro.jpg" alt="Chevrolet Camaro ZL1" />
+      </div>
+      <div class="article-content">
+        <h3>Chevrolet Camaro ZL1</h3>
+        <p>
+          El Chevrolet Camaro ZL1 es un muscle car emblemático con un motor V8 de 650 caballos de fuerza. 
+          Combina potencia brutal con un diseño clásico americano, ideal para los amantes de la velocidad y la estética deportiva. 
+          Este vehículo representa la esencia de la performance y el estilo en las carreteras.
+        </p>
+      </div>
+    </article>
+  </main>
+
+</body>
+</html>
