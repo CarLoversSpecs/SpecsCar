@@ -2,168 +2,118 @@
 <html lang="es">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Artículo: Coche del Día</title>
+  <title>Página Principal</title>
   <style>
     body {
-      margin: 0;
       font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
       background-color: white;
       color: black;
+      max-width: 900px;
+      margin: 2rem auto;
+      padding: 0 1rem;
     }
-
     header {
-      background-color: black;
       display: flex;
-      justify-content: center; /* Centrar botones */
-      align-items: center;
-      padding: 1rem 2rem;
+      justify-content: center;
+      gap: 15px;
+      margin-bottom: 2rem;
     }
-
-    .nav-buttons {
-      display: flex;
-      gap: 1rem;
-    }
-
-    header a {
-      text-decoration: none;
-      padding: 8px 16px;
+    /* Estilo base para botones y links con clase btn */
+    button, a.btn {
+      padding: 8px 20px;
       font-weight: bold;
       border-radius: 20px;
       font-size: 1rem;
-      color: white;
       border: 2px solid transparent;
+      cursor: pointer;
       transition: all 0.3s ease;
-      display: inline-block;
+      text-decoration: none;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
     }
-
-    .btn-dia, .btn-publi {
+    /* Coche del día: rojo */
+    .btn-coche {
       background-color: red;
-    }
-
-    .btn-marcas {
-      background-color: gray;
       color: white;
+      border-color: red;
     }
-
-    /* Hover invertido */
-    .btn-dia:hover, .btn-publi:hover {
+    .btn-coche:hover {
       background-color: white;
       color: red;
-      border: 2px solid red;
+      border-color: red;
     }
-
-    .btn-marcas:hover {
+    /* Botón marcas */
+    #btn-marcas {
+      background-color: gray;
+      color: black;
+      border-color: gray;
+    }
+    #btn-marcas:hover {
       background-color: white;
       color: gray;
-      border: 2px solid gray;
+      border-color: gray;
     }
-
-    main {
-      max-width: 900px;
-      margin: 3rem auto;
-      padding: 0 1rem;
+    /* Botón contacto */
+    #btn-contacto {
+      background-color: black;
+      color: white;
+      border-color: black;
     }
-
-    .welcome-box {
-      background-color: #ccc;
-      border-radius: 25px;
-      padding: 3rem 2rem;
-      text-align: center;
-      margin-bottom: 3rem;
-    }
-
-    .welcome-box h1 {
-      font-size: 3.5rem;
-      margin: 0;
+    #btn-contacto:hover {
+      background-color: white;
       color: black;
+      border-color: black;
     }
-
-    .welcome-box h2 {
-      font-size: 2rem;
-      margin: 0.5rem 0 0;
-      color: #222;
-      font-weight: 500;
-    }
-
-    article {
+    .welcome-box {
+      background-color: #ddd;
+      border-radius: 15px;
+      padding: 2rem;
       display: flex;
       gap: 2rem;
-      flex-wrap: wrap;
-      align-items: flex-start;
+      align-items: center;
+      margin-bottom: 3rem;
     }
-
-    .article-image {
-      flex: 1 1 400px;
-      border: 4px solid black;
-      border-radius: 15px;
-      overflow: hidden;
+    .welcome-text {
+      flex: 1;
     }
-
-    .article-image img {
-      width: 100%;
-      height: auto;
-      display: block;
-    }
-
-    .article-content {
-      flex: 1 1 400px;
+    .welcome-text h2 {
+      margin: 0;
+      font-size: 2rem;
       color: black;
     }
-
-    .article-content h3 {
-      font-size: 2.5rem;
-      margin-top: 0;
-      margin-bottom: 0.7rem;
-      color: red;
+    .welcome-text h3 {
+      margin-top: 0.3rem;
+      color: #555;
     }
-
-    .article-content p {
-      font-size: 1.3rem;
-      line-height: 1.6;
+    .welcome-text p {
+      margin-top: 1rem;
+      font-size: 1.1rem;
+      color: #222;
     }
-
-    @media (max-width: 700px) {
-      article {
-        flex-direction: column;
-      }
-
-      .article-image, .article-content {
-        flex: 1 1 100%;
-      }
+    .welcome-img {
+      width: 300px;
+      height: 200px;
+      border-radius: 15px;
+      object-fit: cover;
+      border: 3px solid #333;
     }
   </style>
 </head>
 <body>
-
   <header>
-    <nav class="nav-buttons">
-     <button id="btn-coche" onclick="location.href='daycar/index.html'">Coche del día</button>
-      <a href="brands/index.html" class="btn-marcas">Marcas</a>
-      <a href="publicidad.html" class="btn-publi">Publicidad</a>
-    </nav>
+    <a href="daycar/index.html" class="btn btn-coche">Coche del día</a>
+    <button id="btn-marcas" onclick="location.href='brands/index.html'">Marcas</button>
+    <button id="btn-contacto" onclick="location.href='contacto.html'">Contacto</button>
   </header>
 
-  <main>
-    <div class="welcome-box">
-      <h1>Bienvenido</h1>
-      <h2>Amante de los coches</h2>
+  <div class="welcome-box" id="cocheDelDia">
+    <img src="articles/camaro.jpg" alt="Foto coche del día" class="welcome-img" id="fotoCoche" />
+    <div class="welcome-text">
+      <h2 id="tituloCoche">Bienvenido</h2>
+      <h3>Amante de los coches</h3>
+      <p id="descCoche">Descripción del coche del día aparecerá aquí.</p>
     </div>
-
-    <article id="coche-del-dia">
-      <div class="article-image">
-        <img src="camaro.jpg" alt="Chevrolet Camaro ZL1" />
-      </div>
-      <div class="article-content">
-        <h3>Chevrolet Camaro ZL1</h3>
-        <p>
-          El Chevrolet Camaro ZL1 es un muscle car emblemático con un motor V8 de 650 caballos de fuerza. 
-          Combina potencia brutal con un diseño clásico americano, ideal para los amantes de la velocidad y la estética deportiva. 
-          Este vehículo representa la esencia de la performance y el estilo en las carreteras.
-        </p>
-      </div>
-    </article>
-  </main>
-
+  </div>
 </body>
 </html>
