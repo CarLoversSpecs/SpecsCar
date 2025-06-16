@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Mi Web de Coches</title>
+  <style>
+    body {
+      margin: 0;
+      font-family: Arial, sans-serif;
+      background-color: white;
+      color: black;
+    }
+
+    header {
+      background-color: black;
+      display: flex;
+      justify-content: center;
+      gap: 1rem;
+      padding: 1rem;
+    }
+
+    header a {
+      padding: 10px 20px;
+      border-radius: 20px;
+      text-decoration: none;
+      font-weight: bold;
+      color: white;
+    }
+
+    .btn-dia { background-color: red; }
+    .btn-marcas { background-color: gray; }
+    .btn-publi { background-color: red; }
+
+    .main-box {
+      background-color: #ccc;
+      margin: 2rem auto;
+      padding: 2rem;
+      max-width: 600px;
+      border-radius: 20px;
+      text-align: center;
+    }
+
+    .main-box h1 {
+      font-size: 2rem;
+      margin-bottom: 0.5rem;
+    }
+
+    .main-box h2 {
+      font-size: 1.2rem;
+      color: #333;
+      margin-top: 0;
+    }
+
+    .lower-section {
+      display: flex;
+      justify-content: center;
+      gap: 2rem;
+      margin-top: 2rem;
+      flex-wrap: wrap;
+    }
+
+    .box-white {
+      background-color: white;
+      border: 2px solid black;
+      width: 300px;
+      height: 200px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 10px;
+    }
+
+    .box-white img {
+      max-width: 100%;
+      max-height: 100%;
+      border-radius: 10px;
+    }
+
+    .box-red {
+      background-color: red;
+      border-radius: 20px;
+      width: 300px;
+      height: 200px;
+      color: white;
+      padding: 20px;
+      box-sizing: border-box;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+    }
+
+    .box-red h3 {
+      margin: 0 0 10px 0;
+      font-size: 1.5rem;
+    }
+
+    .box-red p {
+      margin: 0;
+      font-size: 1rem;
+    }
+  </style>
+</head>
+<body>
+
+  <header>
+    <a href="#coche-dia" class="btn-dia">Coche del día</a>
+    <a href="marcas.html" class="btn-marcas">Marcas</a>
+    <a href="publicidad.html" class="btn-publi">Publicidad</a>
+  </header>
+
+  <div class="main-box">
+    <h1>Bienvenido</h1>
+    <h2>Amante de los coches</h2>
+  </div>
+
+  <div class="lower-section" id="coche-dia">
+    <div class="box-white">
+      <img src="camaro.jpg" alt="Chevrolet Camaro ZL1" />
+    </div>
+    <div class="box-red">
+      <h3>Chevrolet Camaro ZL1</h3>
+      <p>Muscle car con motor V8 de 650CV, ideal para velocidad y estilo clásico americano.</p>
+    </div>
+  </div>
+
+</body>
+</html>
