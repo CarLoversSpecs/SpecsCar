@@ -31,6 +31,26 @@
       font-size: 1.2rem;
       color: #333;
       margin-top: 0;
+      margin-bottom: 1.5rem;
+    }
+
+    .btn-articles {
+      display: inline-block;
+      background-color: red;
+      color: white;
+      padding: 10px 25px;
+      text-decoration: none;
+      font-weight: bold;
+      border-radius: 20px;
+      font-size: 1.1rem;
+      transition: background-color 0.3s ease;
+      border: 2px solid transparent;
+    }
+
+    .btn-articles:hover {
+      background-color: white;
+      color: red;
+      border: 2px solid red;
     }
   </style>
 </head>
@@ -38,5 +58,6 @@
   <h1>Ejemplo de Marca</h1>
   <img src="marca-ejemplo.jpg" alt="Imagen de la marca ejemplo" />
   <p>Esta página será el acceso a todos los artículos relacionados con esta marca.</p>
+  <a href="articles/index.html" class="btn-articles">Ver artículos</a>
 </body>
 </html>
