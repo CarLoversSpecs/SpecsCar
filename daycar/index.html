@@ -55,24 +55,6 @@
       line-height: 1.5;
       color: #222;
     }
-
-    button#refresh {
-      margin-top: 2rem;
-      background-color: red;
-      color: white;
-      border: none;
-      padding: 10px 25px;
-      font-size: 1.1rem;
-      border-radius: 20px;
-      cursor: pointer;
-      transition: background-color 0.3s ease;
-    }
-
-    button#refresh:hover {
-      background-color: white;
-      color: red;
-      border: 2px solid red;
-    }
   </style>
 </head>
 <body>
@@ -87,26 +69,23 @@
     </div>
   </div>
 
-  <button id="refresh">Mostrar otro coche</button>
-
   <script>
     const coches = [
       {
-        titulo: "Chevrolet Camaro",
-        descripcion: "El Chevrolet Camaro es un icónico muscle car americano, conocido por su potente motor V8 y su diseño agresivo y deportivo.",
-        imagen: "../articles/camaro.jpg"
+        titulo: "Porsche 911 GT3 RS",
+        descripcion: "Diseñado para el circuito, el GT3 RS combina precisión alemana con potencia pura y diseño aerodinámico extremo.",
+        imagen: "../articles/gt3rs.jpg"
       },
       {
-        titulo: "Chevrolet Corvette",
-        descripcion: "El Chevrolet Corvette es un deportivo legendario, con un rendimiento y diseño que marcan la pauta en el mundo automotriz.",
-        imagen: "../articles/corvette.jpg"
+        titulo: "Lamborghini Huracán",
+        descripcion: "Un superdeportivo italiano con motor V10 que ofrece rendimiento brutal y un diseño agresivo inconfundible.",
+        imagen: "../articles/huracan.jpg"
       },
       {
-        titulo: "Chevrolet Impala",
-        descripcion: "El Chevrolet Impala es un clásico americano, conocido por su confort y estilo elegante en el mundo de los sedanes.",
-        imagen: "../articles/impala.jpg"
+        titulo: "Lamborghini Urus",
+        descripcion: "El SUV más rápido del mundo, que combina lujo, deportividad y funcionalidad familiar con un motor V8 biturbo.",
+        imagen: "../articles/urus.jpg"
       }
-      // Añade más coches aquí si quieres
     ];
 
     function mostrarCocheAleatorio() {
@@ -117,8 +96,6 @@
       document.getElementById("carPhoto").src = coche.imagen;
       document.getElementById("carPhoto").alt = `Foto de ${coche.titulo}`;
     }
-
-    document.getElementById("refresh").addEventListener("click", mostrarCocheAleatorio);
 
     window.onload = mostrarCocheAleatorio;
   </script>
